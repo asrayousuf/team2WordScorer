@@ -6,15 +6,16 @@ import java.util.Map.Entry;
 public class anagramsFinal {
 	
 	public String sortWord(String word) {
+			word = word.toLowerCase();
 	        char[] chars = word.toCharArray();
 	        Arrays.sort(chars);
 	        return new String(chars);
 	}
 
 	
-	public HashMap<String, String> getAnagramList() throws NumberFormatException, IOException {
+	public HashMap<String, String> getAnagramList(String inputPath) throws NumberFormatException, IOException {
 		
-		FileReader sowpods= new FileReader("C:/Users/test/Pictures/sowpods.txt");
+		FileReader sowpods= new FileReader(inputPath);
 		BufferedReader in=new BufferedReader(sowpods);
 				
 		String currentWord=in.readLine();

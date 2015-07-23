@@ -31,7 +31,7 @@ public class Test {
 		        System.out.println(String.valueOf(pair.getKey() + " " +pair.getValue()));
 		    }
 		    System.out.println("Test 3: Testing Combinations Class");
-		    Combinations cmb= new Combinations("ab");
+		    Combinations cmb= new Combinations("ab ");
 		    System.out.println(cmb.combinations);
 		    
 		    System.out.println("Test 3: Testing anagram generation of all combinations");

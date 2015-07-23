@@ -23,7 +23,10 @@ public class WordScorer {
 		}
 	}
 	public int getCharacterScore(char letter){
-		return characterScoreMap.get(letter);
+		if (characterScoreMap.containsKey(letter))
+			return characterScoreMap.get(letter);
+		else
+			return 0;
 	}
 	public int getWordScore(String word){
 		   char[] chars = word.toCharArray();
@@ -32,6 +35,9 @@ public class WordScorer {
 			   score += getCharacterScore(chars[i]);
 		   }
 		   return score;
+	}
+	public void insertWithScore(String word, int score) {
+		wordScoreMap.put(word, score);
 	}
 	
 	public void insert(String word) {
