@@ -8,7 +8,9 @@ import java.util.TreeMap;
 import java.util.Map.Entry;
 
 public class Test {
+	
 	public static void main(String args[]) throws NumberFormatException, IOException{
+		
 		System.out.println("Test 1: Testing anagram class");
 		anagramsFinal af = new anagramsFinal();
 		HashMap<String, String> anagrams = af.getAnagramList("C:/Users/test/Pictures/sowpdList.txt");
@@ -30,6 +32,7 @@ public class Test {
 		        Map.Entry pair = (Map.Entry)it.next();
 		        System.out.println(String.valueOf(pair.getKey() + " " +pair.getValue()));
 		    }
+		    
 		    System.out.println("Test 3: Testing Combinations Class");
 		    Combinations cmb= new Combinations("ab ");
 		    System.out.println(cmb.combinations);
