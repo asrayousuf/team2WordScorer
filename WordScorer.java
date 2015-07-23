@@ -45,33 +45,4 @@ public class WordScorer {
 		return sorted_map;
 	}
 	
-	public static void main(String args[]) throws NumberFormatException, IOException {
-		if (args.length < 1) {
-			System.out.println("No file path entered");
-			System.exit(0);
-		}
-		FileReader sowpods= new FileReader(args[0]);
-		BufferedReader in=new BufferedReader(sowpods);
-		
-		File fout = new File(args[1]);
-		FileOutputStream fos = new FileOutputStream(fout);
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
-		
-		WordScorer ws = new WordScorer();
-		String word=in.readLine();
-		while (word!=null) {
-			ws.insert(word);
-			word=in.readLine();
-		}
-		in.close();
-		
-		TreeMap<String,Integer> sorted_map = ws.getSortedList();
-		java.util.Iterator<Entry<String, Integer>> it = sorted_map.entrySet().iterator();
-	    while (it.hasNext()) {
-	        Map.Entry pair = (Map.Entry)it.next();
-	        bw.write(String.valueOf(pair.getKey() + " " +pair.getValue()));
-			bw.newLine();
-	    }
-	    bw.close();		
-	}
 }
