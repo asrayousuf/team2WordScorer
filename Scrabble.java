@@ -9,17 +9,7 @@ import java.util.TreeMap;
 import java.util.Map.Entry;
 
 public class Scrabble {
-	public static String getTiles()
-	{
-		int min='a';
-		int max='z';
-		String rack="";
-		for(int i=0;i<7;i++)
-		{
-			rack+= (char)(min + (int)(Math.random() * ((max - min) + 1)));
-		}
-		return rack;	
-	}
+
 	public static void main(String args[]) throws NumberFormatException, IOException{
 		
 		InputStreamReader read=new InputStreamReader(System.in);
@@ -35,12 +25,14 @@ public class Scrabble {
 		
 		for (String combination : c.combinations) {
 			if(anagrams.containsKey(af.sortWord(combination))) {
-				String[] result = anagrams.get(af.sortWord(combination)).split(" ");
-				for(String str: result) {
-					ws.insertWithScore(str, ws.getWordScore(combination));
+				String[] validWords = anagrams.get(af.sortWord(combination)).split(" ");
+				int score = ws.getWordScore(combination);
+				for(String word: validWords) {
+					ws.insertWithScore(word, score);
 				}
 			}
 		}		
+		
 		TreeMap<String,Integer> sorted_map = ws.getSortedList();
 		java.util.Iterator<Entry<String, Integer>> it = sorted_map.entrySet().iterator();
 		if(sorted_map.isEmpty()){
