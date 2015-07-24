@@ -12,7 +12,7 @@ public class Test {
 	public static void main(String args[]) throws NumberFormatException, IOException{
 		
 		System.out.println("Test 1: Testing anagram class");
-		anagramsFinal af = new anagramsFinal();
+		Anagrams af = new Anagrams();
 		HashMap<String, String> anagrams = af.getAnagramList("C:/Users/test/Pictures/sowpdList.txt");
 		 Iterator<Entry<String, String>> itrtr1 = anagrams.entrySet().iterator();
 		    while (itrtr1.hasNext()) {

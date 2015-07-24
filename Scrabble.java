@@ -28,7 +28,7 @@ public class Scrabble {
 		String rack=in.readLine();
 	
 		System.out.println("Rack: " + rack);
-		anagramsFinal af = new anagramsFinal();
+		Anagrams af = new Anagrams();
 		HashMap<String, String> anagrams = af.getAnagramList("C:/Users/test/Pictures/sowpods.txt");
 		WordScorer ws = new WordScorer();
 		Combinations c = new Combinations(rack);
